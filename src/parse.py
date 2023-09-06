@@ -1,6 +1,9 @@
 import string
 import re
 
+### Parse String
+
+
 def get_page_number(text,number_of_pages):
     page_num_string = ""
     page_number = 0
@@ -37,6 +40,10 @@ def remove_nonalphanumeric(text):
         if not x.isnumeric() and not x.isalpha() and x not in string.punctuation and not x.isspace():
             text = text.replace(x, '')
     return text
+
+
+### Parse Dictionary
+
 
 def find_page_num_trend(pages):
     page_number_location = []

@@ -13,6 +13,22 @@ def make_txt(pages):
     file.write(text_string.getvalue())
     return file_path
 
+def make_txts(pages):
+
+    
+
+    for page in pages:
+        file_path = os.path.join(os.path.abspath(__file__)[:-14],'output/pdf_to_text.txt')
+        file = open(file_path,'w')
+        text_string = StringIO()
+        for page in pages:
+            text_string.write(f"Page {page}")
+            text_string.write("\n\n")
+            text_string.write(pages[page])
+            text_string.write("\n\n")
+        file.write(text_string.getvalue())
+    return file_path
+
 def memorization_from_dict(pages):
     file_path = os.path.join(os.path.abspath(__file__)[:-14],'output/memorization.txt')
     for page in pages:
