@@ -36,5 +36,6 @@ def make_textfiles(pdfpath):
     return text_file
 
 ### main 
+open('output/test.txt','w')
 os.system('rm -r output/*')
-lectures_to_files()
+# create.dir_of_txt('/mnt/c/Users/nickt/OneDrive/School/cpre_339/quizzes/quiz_1/lecture_3/')

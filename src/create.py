@@ -1,5 +1,6 @@
 import os
 import datetime
+import src.parse as parse
 from io import StringIO 
 
 def make_txt(pages):
@@ -38,14 +39,29 @@ def memorization_from_dict(pages):
         for word in line:
             print(word)
 
+def dir_of_txt(source_dir):
+    dir_list = os.listdir(source_dir)
+    dir_name = parse.get_name(source_dir)
+    file = open(f'output/{dir_name}.txt','w')
+    for name in dir_list:
+        file = os.path.join(source_dir,name)
+        memorization_from_txt(file)
+
 def memorization_from_txt(source_filepath):
-    file_path = os.path.join(os.path.abspath(__file__)[:-14],'output/memorization.txt')
     source = open(source_filepath,'r').readlines()
-    print(source)
+    new_text = StringIO()
+    for line in source:
+        for word in line.split():
+            line = line.replace(word, word[0])
+        new_text.write(line)
+    source = open(source_filepath,'a')
+    source.write(new_text.getvalue())
 
 def has_name(dictionary):
     try:
         return dictionary['name']
     except:
-        return datetime.datetime()
+        name = str(datetime.datetime.now()).replace(' ','_').split('.')[0]
+        return name
+
     

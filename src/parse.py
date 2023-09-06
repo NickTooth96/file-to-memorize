@@ -82,4 +82,3 @@ def get_name(path):
     index = len(path) - 1
     return path[index].replace(' ','_').split('.')[0]
 
-get_name("/mnt/c/Users/nickt/OneDrive/`School/cpre_339/slides/SE 339 - Lecture 2 - Aug 29- Introduction.pdf")
