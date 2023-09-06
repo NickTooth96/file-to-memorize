@@ -4,8 +4,7 @@ from PyPDF2 import PdfReader
 
 
 def from_pdf(filepath):
-    text = {}
-
+    text = {'name': parse.get_name(filepath)}
     reader = PdfReader(filepath)
     page_number = 0
 

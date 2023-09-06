@@ -1,5 +1,6 @@
 import string
 import re
+import os
 
 ### Parse String
 
@@ -48,11 +49,12 @@ def remove_nonalphanumeric(text):
 def find_page_num_trend(pages):
     page_number_location = []
     for page in pages:
-        matches = [m.start() for m in re.finditer(str(page),pages[page])]
-        average_match = sum(matches) / len(matches)
-        page_number_location.append(average_match / len(pages[page]))
-    average_lacation = sum(page_number_location) / len(page_number_location)
-    return average_lacation
+        if type(page) != str:
+            matches = [m.start() for m in re.finditer(str(page),pages[page])]
+            average_match = sum(matches) / len(matches)
+            page_number_location.append(average_match / len(pages[page]))
+    average_location = sum(page_number_location) / len(page_number_location)
+    return average_location
 
 def remove_small_pages(dictionary):
     short_lines = []
@@ -70,3 +72,14 @@ def remove_pages(dictionary,pages_to_remove):
         if entry not in pages_to_remove:
             output[entry] = dictionary[entry]
     return output
+
+
+### other parsers
+
+
+def get_name(path):
+    path = path.split("/")
+    index = len(path) - 1
+    return path[index].replace(' ','_').split('.')[0]
+
+get_name("/mnt/c/Users/nickt/OneDrive/`School/cpre_339/slides/SE 339 - Lecture 2 - Aug 29- Introduction.pdf")
