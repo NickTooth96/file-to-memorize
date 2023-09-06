@@ -32,8 +32,6 @@ def remove_page_number(text,number,location):
         new_text = new_text
     return''.join(new_text).replace('*', '')
 
-
-
 def remove_nonalphanumeric(text):
     for x in text:
         if not x.isnumeric() and not x.isalpha() and x not in string.punctuation and not x.isspace():
@@ -48,3 +46,20 @@ def find_page_num_trend(pages):
         page_number_location.append(average_match / len(pages[page]))
     average_lacation = sum(page_number_location) / len(page_number_location)
     return average_lacation
+
+def remove_small_pages(dictionary):
+    short_lines = []
+    for entry in dictionary:        
+        line = dictionary[entry].split("\n")
+        if len(line) <= 3:
+            print("Page " + str(entry) + ":",len(line),"lines")
+            print(dictionary[entry])
+            short_lines.append(entry)
+    return short_lines
+
+def remove_pages(dictionary,pages_to_remove):
+    output = {}
+    for entry in dictionary:
+        if entry not in pages_to_remove:
+            output[entry] = dictionary[entry]
+    return output

@@ -23,4 +23,6 @@ def memorization_from_dict(pages):
 
 def memorization_from_txt(source_filepath):
     file_path = os.path.join(os.path.abspath(__file__)[:-14],'output/memorization.txt')
+    source = open(source_filepath,'r').readlines()
+    print(source)
     
