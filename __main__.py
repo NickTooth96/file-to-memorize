@@ -39,7 +39,9 @@ main_path = os.path.expanduser(__file__)[:-49]
 print(main_path)
 path = os.path.join(main_path,"OneDrive","School","cpre_339","quizzes","quiz_1","lecture_3") ## windows path
 
+linux_path = '/mnt/c/Users/nickt/OneDrive/School/cpre_339/quizzes/quiz_1/lecture_3/'
 open('output/test.txt','w')
 os.system('rm -r output/*')
 # create.dir_of_txt('/mnt/c/Users/nickt/OneDrive/School/cpre_339/quizzes/quiz_1/lecture_3/')
-create.dir_of_txt(path)
+# create.dir_of_txt(path)
+create.dir_of_txt(linux_path)

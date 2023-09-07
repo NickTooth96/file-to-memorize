@@ -17,6 +17,7 @@ def combine(dir_path):
     
 main_path = os.path.expanduser(__file__)[:-49]
 print(main_path)
-path = os.path.join(main_path,"OneDrive","School","cpre_339","quizzes","quiz_1","lecture_2") ## windows path
+main_path = '/mnt/c/Users/nickt'
+path = os.path.join(main_path,"OneDrive","School","cpre_339","quizzes","quiz_1","lecture_3") ## windows path
 print(path)
 combine(path)
