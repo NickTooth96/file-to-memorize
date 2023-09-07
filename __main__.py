@@ -39,3 +39,4 @@ def make_textfiles(pdfpath):
 open('output/test.txt','w')
 os.system('rm -r output/*')
 # create.dir_of_txt('/mnt/c/Users/nickt/OneDrive/School/cpre_339/quizzes/quiz_1/lecture_3/')
+create.dir_of_txt('/mnt/c/Users/nickt/OneDrive/School/cpre_339/quizzes/quiz_1/lecture_2/')
