@@ -3,7 +3,6 @@ import src.create as create
 import src.parse as parse
 import src.retrieve as retrieve
 
-
 def fancy():
     textfile = make_textfile("/mnt/c/Users/nickt/OneDrive/`School/cpre_339/slides/SE 339 - Lecture 1 - Aug 22- Course Overview.pdf")
     final = create.memorization(textfile)
@@ -36,7 +35,11 @@ def make_textfiles(pdfpath):
     return text_file
 
 ### main 
+main_path = os.path.expanduser(__file__)[:-49]
+print(main_path)
+path = os.path.join(main_path,"OneDrive","School","cpre_339","quizzes","quiz_1","lecture_3") ## windows path
+
 open('output/test.txt','w')
 os.system('rm -r output/*')
 # create.dir_of_txt('/mnt/c/Users/nickt/OneDrive/School/cpre_339/quizzes/quiz_1/lecture_3/')
-create.dir_of_txt('/mnt/c/Users/nickt/OneDrive/School/cpre_339/quizzes/quiz_1/lecture_2/')
+create.dir_of_txt(path)
