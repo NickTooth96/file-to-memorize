@@ -35,7 +35,9 @@ def make_textfiles(pdfpath):
     return text_file
 
 ### main 
-main_path = os.path.expanduser(__file__)[:-49]
+
+# main_path = os.path.expanduser(__file__)[:-49]
+main_path = os.system("pwd")
 print(main_path)
 path = os.path.join(main_path,"OneDrive","School","cpre_339","quizzes","quiz_1","lecture_3") ## windows path
 print(path)
