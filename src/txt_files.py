@@ -11,13 +11,6 @@ def combine(dir_path):
     print(dir_name)
     with open(f'{dir_path}.txt','w') as outfile:
         for fname in filenames:
+            outfile.write("\n")
             with open(fname) as infile:
                 outfile.write(infile.read())
-    
-    
-main_path = os.path.expanduser(__file__)[:-49]
-print(main_path)
-main_path = '/mnt/c/Users/nickt'
-path = os.path.join(main_path,"OneDrive","School","cpre_339","quizzes","quiz_1","lecture_3") ## windows path
-print(path)
-combine(path)
