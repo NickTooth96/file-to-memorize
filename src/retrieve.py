@@ -4,6 +4,14 @@ from PyPDF2 import PdfReader
 
 
 def from_pdf(filepath):
+    """Pulls text from PDF file and returns it in dictionary form 
+
+    Args:
+        filepath (string): path to PDF file to retrieve text from
+
+    Returns:
+        dictionary: output dictionary with pages as entries and page numbers as keys
+    """
     text = {'name': parse.get_name(filepath)}
     reader = PdfReader(filepath)
     page_number = 0

@@ -3,7 +3,14 @@ import datetime
 import src.parse as parse
 from io import StringIO 
 
-def make_txt(pages):
+def make_txt(pages: dict):
+    """ Creates a single text file containing text from input dictionary. 
+    Args:
+        pages (dict): input dictionary  
+
+    Returns:
+        str: path to txt file created by function
+    """
     name = has_name(pages)
     file_path = os.path.join(os.path.abspath(__file__)[:-14],f'output/{name}.txt')
     file = open(file_path,'w')
@@ -17,7 +24,7 @@ def make_txt(pages):
     file.write(text_string.getvalue())
     return file_path
 
-def make_txts(pages):
+def make_txts(pages: dict):
     name = has_name(pages)
     os.system(f'mkdir output/{name}/')
     for page in pages:
@@ -30,14 +37,6 @@ def make_txts(pages):
         text_string.write("\n\n")
         file.write(text_string.getvalue())
     return file_path
-
-def memorization_from_dict(pages):
-    file_path = os.path.join(os.path.abspath(__file__)[:-14],'output/memorization.txt')
-    for page in pages:
-        line = pages[page].split(" ")
-        print(line)
-        for word in line:
-            print(word)
 
 def dir_of_txt(source_dir):
     dir_list = os.listdir(source_dir)
