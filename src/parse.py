@@ -1,6 +1,6 @@
 import string
 import re
-import os
+
 
 ### Parse String
 
@@ -72,13 +72,4 @@ def remove_pages(dictionary,pages_to_remove):
         if entry not in pages_to_remove:
             output[entry] = dictionary[entry]
     return output
-
-
-### other parsers
-
-
-def get_name(path):
-    path = path.split("/")
-    index = len(path) - 1
-    return path[index].replace(' ','_').split('.')[0]
 

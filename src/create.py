@@ -3,7 +3,7 @@ import datetime
 import src.parse as parse
 from io import StringIO 
 
-def make_txt(pages: dict):
+def txt(pages: dict):
     """ Creates a single text file containing text from input dictionary. 
     Args:
         pages (dict): input dictionary  
@@ -11,8 +11,7 @@ def make_txt(pages: dict):
     Returns:
         str: path to txt file created by function
     """
-    name = has_name(pages)
-    file_path = os.path.join(os.path.abspath(__file__)[:-14],f'output/{name}.txt')
+    file_path = os.path.join(pages['directory'], pages['name'] + ".txt")
     file = open(file_path,'w')
     text_string = StringIO()
     for page in pages:
@@ -24,11 +23,11 @@ def make_txt(pages: dict):
     file.write(text_string.getvalue())
     return file_path
 
-def make_txts(pages: dict):
-    name = has_name(pages)
-    os.system(f'mkdir output/{name}/')
+def txts(pages: dict):
+    os.mkdir(os.path.join(pages['directory'],pages['name']))
     for page in pages:
-        file_path = os.path.join(os.path.abspath(__file__)[:-14],f'output/{name}/{page}.txt')
+        name = str(page).rjust(2,"0")
+        file_path = os.path.join(pages['directory'], pages['name'], name + ".txt") 
         file = open(file_path,'w')
         text_string = StringIO()
         text_string.write(f"Page {page}")
@@ -37,14 +36,6 @@ def make_txts(pages: dict):
         text_string.write("\n\n")
         file.write(text_string.getvalue())
     return file_path
-
-def dir_of_txt(source_dir):
-    dir_list = os.listdir(source_dir)
-    dir_name = parse.get_name(source_dir)
-    file = open(f'output/{dir_name}.txt','w')
-    for name in dir_list:
-        file = os.path.join(source_dir,name)
-        memorization_from_txt(file)
 
 def memorization_from_txt(source_filepath):
     source = open(source_filepath,'r').readlines()

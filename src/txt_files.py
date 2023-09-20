@@ -2,7 +2,7 @@ import os
 import parse
 
 def combine(dir_path):    
-    dir_name = parse.get_name(dir_path)
+    dir_name = os.path.basename(filepath).split('.')[0]
     files = os.listdir(dir_path)
     filenames = []
     for file in files:

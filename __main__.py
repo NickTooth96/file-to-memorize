@@ -1,7 +1,7 @@
 import os
 import src.create as create
 import src.parse as parse
-# import src.retrieve as retrieve
+import src.retrieve as retrieve
 
 def fancy():
     textfile = make_textfile("/mnt/c/Users/nickt/OneDrive/`School/cpre_339/slides/SE 339 - Lecture 1 - Aug 22- Course Overview.pdf")
@@ -36,8 +36,10 @@ def make_textfiles(pdfpath):
 
 ### main 
 
-main_path = os.path.expanduser("~")
-print(main_path)
-path = os.path.join(main_path,"OneDrive","School","cpre_339","quizzes","quiz_1","lecture_3") ## windows path
-print(path)
+src = ["/mnt/c/Users/nickt/OneDrive/School/se_317/slides/Ch01_Ammann_G.pdf",
+       "/mnt/c/Users/nickt/OneDrive/School/se_317/slides/Ch02-mdtd_class_Ga_F23.pdf",
+       "/mnt/c/Users/nickt/OneDrive/School/se_317/slides/Ch03-automation_JUnit.pdf"]
 
+for path in src:
+    text = retrieve.retrieve(path)
+    # create.txts(text)
