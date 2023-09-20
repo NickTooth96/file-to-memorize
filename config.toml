@@ -1,0 +1,18 @@
+# Sample of  config.toml formatting
+# DO NOT EDIT! Make changes in config.toml or create new toml file
+# Nick Toothaker
+
+[catagory1]                 # name of catagory
+percentage = 50             # catagory weight
+current_score =100           # points earned
+possible_score =100          # points attempted
+
+[catagory2]
+percentage = 25
+current_score =100
+possible_score =100
+
+[catagoryN]
+percentage = 25
+current_score =100
+possible_score =100

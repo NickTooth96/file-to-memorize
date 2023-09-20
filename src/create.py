@@ -1,5 +1,6 @@
 import os
 import datetime
+import string
 import src.parse as parse
 from io import StringIO 
 
@@ -42,7 +43,7 @@ def memorization_from_txt(source_filepath):
     new_text = StringIO()
     for line in source:
         for word in line.split():
-            line = line.replace(word, word[0])
+            line = line.replace(word,parse.word(word))
         new_text.write(line)
     source = open(source_filepath,'a')
     source.write(new_text.getvalue())

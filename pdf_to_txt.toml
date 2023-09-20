@@ -1,0 +1,11 @@
+# Sample of config.toml formatting
+# DO NOT EDIT! Make changes in config.toml or create new toml file
+# Nick Toothaker
+
+[operation]                 
+    one = "f'text = parse.from_file({config['info']['directory']})'"
+    two = "create.txt(text)"
+
+[info]
+    directory = "/mnt/c/Users/nickt/OneDrive/School/se_317/slides"
+

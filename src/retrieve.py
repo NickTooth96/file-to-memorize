@@ -27,7 +27,6 @@ def from_pdf(filepath):
     """
     dst = filepath.split(".")[0]
     text = {'name': os.path.basename(filepath).split('.')[0], 'path': filepath, 'directory': os.path.dirname(filepath)}
-    print(text['name'])
     reader = PdfReader(filepath)
     page_number = 0
 
