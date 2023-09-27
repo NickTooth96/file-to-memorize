@@ -27,9 +27,13 @@ if "--mem" in sys.argv:
             for file in os.listdir(os.path.join(os.getcwd(),path)):
                 fpath = os.path.join(path,file)
                 create.memorization_from_txt(fpath)
+        else: 
+            create.memorization_from_txt(path)
 if "--combine" in sys.argv:
     for path in os.listdir(os.getcwd()):
         if os.path.isdir(path):
             txt_files.combine(os.path.join(os.getcwd(),path))
+        else:
+            txt_files.combine(os.path.join(os.getcwd()))
 elif "--config" in sys.argv:
     from_config()
